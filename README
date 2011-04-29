@@ -1,0 +1,22 @@
+(C) Copyright Daniel Nilsson, 2002-2005
+
+Please contact Daniel Nilsson, daniel.nilsson@cgb.ki.se
+with questions and requests.
+
+The use of the program is free for use in research, but please cite
+Benz, Nilsson, Andersson, Clayton, Gulbride; Messenger processing sites in Trypanosoma brucei, MBP 2005
+
+Usage example:
+
+for file in ../../gbk/*.gbk ; do 
+/home/daniel/bin/splicemodel.improvedpA.pl --infile $file 
+--min-polypy-length 10 --max-polypy-mismatches 1 --report --reportfile 
+report/`basename $file .gbk`.report --gff gff/`basename $file .gbk`.gff 
+--gff-utrs utrs_gff/`basename $file .gbk`.utrs.gff --polypy-ag 261 
+--5pag-atg 1850 --max-stop-ag-distance 5040 --polya-model center 
+--splitstats --statistics stats/`basename $file .gbk`.r --rout 
+--min-qual-polypy-run 8 --polya-pyag 100 --half-polya-win 36 
+--coupled-polya --short >> ../$RUNDIR.cshort.log 2>&1; done
+
+Please do consider as an alternative the use of the SLT technique to experimentally determine the splicesites in your species of choice (Nilsson et al, PLoS Pathogens 2010).
+See e.g. splicer.unibe.ch.
